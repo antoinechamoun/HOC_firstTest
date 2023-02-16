@@ -17,7 +17,7 @@ const HOC = (WrappedComponent: React.ComponentType, entity: string) => {
 
     let filteredData = data.term
       ? data.newData.filter((d) => {
-          if (entity === "users") {
+          if ("company" in d) {
             const { name } = d;
             return name.indexOf(data.term) !== -1;
           } else {
@@ -41,7 +41,7 @@ const HOC = (WrappedComponent: React.ComponentType, entity: string) => {
             return (
               <div key={user.id}>
                 <p>
-                  <strong>{user.title}</strong>
+                  <strong>{"company" in user ? user.name : user.title}</strong>
                 </p>
               </div>
             );

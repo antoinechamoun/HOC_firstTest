@@ -36,6 +36,6 @@ export interface typeOfTodo {
 }
 
 export interface typeOfData {
-  newData: any[];
+  newData: Array<typeOfTodo | typeOfUser>;
   term: string;
 }
